@@ -8,7 +8,6 @@
         </element>
         <element id="module-output" name="Grep" />
       </element>
-      <element id="library" level="project" name="args4j:args4j:2.33" />
     </root>
   </artifact>
 </component>

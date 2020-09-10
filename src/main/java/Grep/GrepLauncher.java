@@ -23,7 +23,7 @@ public class GrepLauncher {
 
     public static void main(String[] args) { new GrepLauncher().launch(args);
     }
-    public void launch(String[] args) {
+    private void launch(String[] args) {
         CmdLineParser parser = new CmdLineParser(this);
 
         try {

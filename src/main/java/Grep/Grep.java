@@ -21,13 +21,12 @@ public class Grep {
 
     public ArrayList<String> options(String word, String input) {
         ArrayList<String> strings = new ArrayList<>();
-        String selection = word;
+        String regex = word;
         Pattern ignIsSelected;
-        if (!expr) selection = Pattern.quote(word);
-        if (isIgnore) ignIsSelected = Pattern.compile(selection, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
-        else ignIsSelected = Pattern.compile(selection);
-        try {
-            BufferedReader reader = Files.newBufferedReader(Paths.get(input));
+        if (!expr) regex = Pattern.quote(word);
+        if (isIgnore) ignIsSelected = Pattern.compile(regex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
+        else ignIsSelected = Pattern.compile(regex);
+        try (BufferedReader reader = Files.newBufferedReader(Paths.get(input))) {
             Matcher matcher;
             String currentStr;
             while ((currentStr = reader.readLine()) != null) {

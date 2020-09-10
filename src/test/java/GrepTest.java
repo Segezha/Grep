@@ -18,7 +18,7 @@ public class GrepTest {
         list.add("Спит зеленый дуб.");
         list.add("И, сорвав зеленый листик,");
         list.add("Отчего он не зеленый?");
-        assertEquals(list, grep.options("зеленый", "C:\\Users\\Admin\\IdeaProjects\\Grep\\src\\test\\input1.txt"));
+        assertEquals(list, grep.options("зеленый", "src\\test\\input1.txt"));
         list.clear();
     }
 
@@ -36,7 +36,7 @@ public class GrepTest {
         list.add("Май теперь ведь... май!\"");
         list.add("Старший гном зевает сонно:");
         list.add("\"Цыц! не приставай\".");
-        assertEquals(list, grep.options("зелен" ,"C:\\Users\\Admin\\IdeaProjects\\Grep\\src\\test\\input1.txt"));
+        assertEquals(list, grep.options("зелен" ,"src\\test\\input1.txt"));
         list.clear();
     }
 
@@ -52,7 +52,7 @@ public class GrepTest {
         list.add("Май теперь ведь... май!\"");
         list.add("Старший гном зевает сонно:");
         list.add("\"Цыц! не приставай\".");
-        assertEquals(list, grep.options("зелен" ,"C:\\Users\\Admin\\IdeaProjects\\Grep\\src\\test\\input1.txt"));
+        assertEquals(list, grep.options("зелен" ,"src\\test\\input1.txt"));
         list.clear();
     }
 
@@ -61,7 +61,7 @@ public class GrepTest {
         Grep grep = new Grep(true, false, false);
         list.add("И зелененький кузнечик");
         list.add("Два зелененькие гнома");
-        assertEquals(list, grep.options("зелененький|зелененькие" ,"C:\\Users\\Admin\\IdeaProjects\\Grep\\src\\test\\input1.txt"));
+        assertEquals(list, grep.options("зелененький|зелененькие" ,"src\\test\\input1.txt"));
         list.clear();
     }
 
@@ -76,7 +76,7 @@ public class GrepTest {
         list.add("Май теперь ведь... май!\"");
         list.add("Старший гном зевает сонно:");
         list.add("\"Цыц! не приставай\".");
-        assertEquals(list, grep.options("[!|?|\\-|:]", "C:\\Users\\Admin\\IdeaProjects\\Grep\\src\\test\\input1.txt"));
+        assertEquals(list, grep.options("[!|?|\\-|:]", "src\\test\\input1.txt"));
         list.clear();
     }
 
@@ -86,7 +86,7 @@ public class GrepTest {
         list.add("Два зелененькие гнома");
         list.add("Шепчет младший гном:");
         list.add("Старший гном зевает сонно:");
-        assertEquals(list, grep.options("гнОМ", "C:\\Users\\Admin\\IdeaProjects\\Grep\\src\\test\\input1.txt"));
+        assertEquals(list, grep.options("гнОМ", "src\\test\\input1.txt"));
         list.clear();
     }
 
@@ -99,7 +99,7 @@ public class GrepTest {
         list.add("Песенку завел...");
         list.add("Сели между труб.");
         list.add("Ходит под окном.");
-        assertEquals(list, grep.options("зелен|гном|\"", "C:\\Users\\Admin\\IdeaProjects\\Grep\\src\\test\\input1.txt"));
+        assertEquals(list, grep.options("зелен|гном|\"", "src\\test\\input1.txt"));
         list.clear();
     }
 
@@ -110,7 +110,7 @@ public class GrepTest {
         list.add("Песенку завел...");
         list.add("Сели между труб.");
         list.add("Ходит под окном.");
-        assertEquals(list, grep.options("зеЛен|гНОм|\"", "C:\\Users\\Admin\\IdeaProjects\\Grep\\src\\test\\input1.txt"));
+        assertEquals(list, grep.options("зеЛен|гНОм|\"", "src\\test\\input1.txt"));
         list.clear();
     }
 }
